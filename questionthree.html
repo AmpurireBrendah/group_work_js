@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>QN.3. Write a javascript function to return the maximum of 3 numbers.
+        - Prompt for 3 inputs
+        - Convert to numbers
+        - Pass to the function
+        - Use Math.max to get the maximum.
+        End up with something like this in the UI.Firstnumber:12.34,SecondNumber:192.7,Thirdnumber:56.789,Maximum:192.7</h2>
+
+    <button onclick="getMaxNumber()">Find Maximum</button>
+
+    <p id="result"></p>
+
+    <script>
+        function findMaxOfThree(num1, num2, num3) {
+            return Math.max(num1, num2, num3);
+        }
+
+        function getMaxNumber() {
+            let num1 = parseFloat(prompt("Enter the first number:"));
+            let num2 = parseFloat(prompt("Enter the second number:"));
+            let num3 = parseFloat(prompt("Enter the third number:"));
+
+            // Check if inputs are valid numbers
+            if (isNaN(num1) || isNaN(num2) || isNaN(num3)) {
+                alert("Please enter valid numbers.");
+                return;
+            }
+
+            let maxNumber = findMaxOfThree(num1, num2, num3);
+            
+            // Display the result on the webpage
+            document.getElementById("result").innerHTML = 
+                `First number: ${num1}, Second number: ${num2}, Third number: ${num3} <br> <strong>Maximum: ${maxNumber}</strong>`;
+        }
+
+    </script>
+</body>
+</html>
